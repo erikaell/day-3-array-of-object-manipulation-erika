@@ -43,7 +43,7 @@
                 class="nav-link active text-dark fw-bold"
                 aria-current="page"
                 href="#"
-              >Add Project</a>
+              >Edit Project</a>
             </li>
           </ul>
           <a class="btn btn-dark text-white fw-semibold" href="/contact-me">
@@ -55,10 +55,10 @@
     <!-- End Navbar -->
 
     <div
-      class="container-project-form d-flex justify-content-center align-items-center bg-whitesmoke"
+      class="container-project-form d-flex justify-content-center align-items-center bg-whitesmoke pb-5"
     >
-        <form action="add-project" class="m-0" method="POST">
-        <h2 class="text-center mb-3 mt-1 fw-bold">ADD MY PROJECT</h2>
+      <form action="/edit-project/{{id}}" class="m-0" method="POST">
+        <h2 class="text-center mb-3 mt-3 fw-bold">EDIT MY PROJECT</h2>
         <div class="mb-3">
           <label for="input-project-name" class="form-label">Project Name</label>
           <input
@@ -67,6 +67,7 @@
             id="input-project-name"
             name="name"
             placeholder="Write here ..."
+            value="{{data.name}}"
           />
         </div>
         <div class="row mb-3">
@@ -77,6 +78,7 @@
               class="form-control"
               id="input-start-date"
               name="startDate"
+            value="{{data.startDate}}"
             />
           </div>
           <div class="col-md-6">
@@ -86,6 +88,7 @@
               class="form-control"
               id="input-end-date"
               name="endDate"
+            value="{{data.endDate}}"
             />
           </div>
         </div>
@@ -97,7 +100,7 @@
             name="description"
             rows="3"
             placeholder="Write here ..."
-          ></textarea>
+          >{{data.description}}</textarea>
         </div>
         <div class="checkbox-techs mb-3">
           <label>Technologies</label>
@@ -108,6 +111,7 @@
                   type="checkbox"
                   name="technologies"
                   value="<i class='fa-brands fa-html5'></i>"
+                  {{data.checkhtml}}
                   id="html"
                 />
                 <span>HTML</span>
@@ -119,6 +123,7 @@
                   type="checkbox"
                   name="technologies"
                   value="<i class='fa-brands fa-css3'></i>"
+                  {{data.checkcss}}
                   id="css"
                 />
                 <span>CSS</span>
@@ -130,6 +135,7 @@
                   type="checkbox"
                   name="technologies"
                   value="<i class='fa-brands fa-js'></i>"
+                  {{data.checkjs}}
                   id="javascript"
                 />
                 <span>Javascript</span>
@@ -141,6 +147,7 @@
                   type="checkbox"
                   name="technologies"
                   value="<i class='fa-brands fa-php'></i>"
+                  {{data.checkphp}}
                   id="php"
                 />
                 <span>PHP</span>
